@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import Datepicker from 'react-datepicker'
 import 'react-datepicker/dist/react-datepicker.css';
 import SelectCab from './SelectCab';
+import { Link } from 'react-router-dom';
 
 
 const BookingForm = () => {
@@ -27,12 +28,12 @@ const BookingForm = () => {
         distance: "",
         fare: "",
         LocalTripType: "Hour-Basis",
-        selectedCab:null
+        selectedCab: null
     };
 
     const capitalizeFirstLetter = (str) => {
         return str.charAt(0).toUpperCase() + str.slice(1);
-      };
+    };
 
     const reducer = (state, action) => {
         switch (action.type) {
@@ -45,7 +46,7 @@ const BookingForm = () => {
             case "PICK-UP-DATE":
                 return { ...state, PickUpdate: action.payload };
             case "RETURN-DATE":
-                return { ...state, returndate: action.payload};
+                return { ...state, returndate: action.payload };
             case "NAME":
                 return { ...state, name: capitalizeFirstLetter(action.payload) };
             case "MOBILE":
@@ -55,9 +56,9 @@ const BookingForm = () => {
             case "PICK-UP-LOCATION":
                 return { ...state, pickUpLocation: capitalizeFirstLetter(action.payload) };
             case "PICK-UP-TIME":
-                return { ...state, pickUpTime: action.payload};
+                return { ...state, pickUpTime: action.payload };
             case "RETURN-LOCATION":
-                return { ...state, returnLocation: capitalizeFirstLetter(action.payload)};
+                return { ...state, returnLocation: capitalizeFirstLetter(action.payload) };
             case "RETURN-TIME":
                 return { ...state, ReturnTime: action.payload };
             case "ADD-VISITING-PLACE":
@@ -72,10 +73,10 @@ const BookingForm = () => {
             case "NUMBER-OF-PERSONS":
                 return { ...state, NumberOfPersons: action.payload };
             case "CAB-TYPE":
-               
+
                 return { ...state, CabType: capitalizeFirstLetter(action.payload) };
-              
-                
+
+
             case "LOCAL-TRIP-TYPE":
                 return { ...state, LocalTripType: capitalizeFirstLetter(action.payload) };
             case "DISTANCE":
@@ -83,7 +84,7 @@ const BookingForm = () => {
             case "FARE":
                 return { ...state, fare: action.payload };
             case "SELECTED-CAB":
-                return{...state, selectedCab: action.payload}   
+                return { ...state, selectedCab: action.payload }
             default:
                 return state;
         }
@@ -103,12 +104,12 @@ const BookingForm = () => {
         setError("")
 
 
-        navigate("/confirmbooking", { state: { ...state,PickUpdate: state.PickUpdate.toLocaleDateString(), returndate: state.returndate.toLocaleDateString() } })
+        navigate("/confirmbooking", { state: { ...state, PickUpdate: state.PickUpdate.toLocaleDateString(), returndate: state.returndate.toLocaleDateString() } })
 
 
     };
 
-   
+
 
     const handleDistanceChange = (e) => {
         const distance = e.target.value;
@@ -350,7 +351,7 @@ const BookingForm = () => {
                                     required
                                     onChange={(e) => { dispatch({ type: "NUMBER-OF-PERSONS", payload: e.target.value }) }} />
                             </div>
-
+                            {/* 
                             <div className='col-6'>
                                 <label htmlFor="Distance">Distance <b style={{ fontSize: "12px" }}>({state.from} - {state.to} in km)</b></label>
                                 <input type="number" className='input-field'
@@ -360,7 +361,7 @@ const BookingForm = () => {
                                     required
                                     onChange={handleDistanceChange}
                                 />
-                            </div>
+                            </div> */}
 
 
 
@@ -415,9 +416,17 @@ const BookingForm = () => {
                             <div className="col-12 search-cab">
                                 <button type='submit'>Book Now</button>
                             </div>
+                         
                         </div>
+                     
                     </form>
+                    <Link to="/terms&conditions">
+                                <p className='fare-explanation' style={{ color: "black", marginTop: "-20px", fontSize: "10px", textAlign: "right" }}>
+                                    Terms & conditions Applicable
+                                </p>
+                            </Link>
                 </div>
+              
             </div>
         </div>
     )

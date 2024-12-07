@@ -404,9 +404,7 @@ margin-left: 10px;
   /* font-size: 35px; */
 }
 
-.home-banner p {
-  /* font-weight: 300; */
-}
+
 
 .home-banner-text {
   color: #005395 !important;
@@ -1524,11 +1522,6 @@ position: relative;
 }
 /* -------------------------------services---------------------------------- */
 
-.service-item{
-  /* border: 1px solid red; */
- 
-  /* padding: 20px; */
-}
 
 .service-item-inner{
   /* border: 1px solid black; */
@@ -1713,10 +1706,7 @@ margin-top: -15px;
     margin-bottom: 5px !important;
   }
 
-  .landing-text p {
-    /* display:none; */
-    /* margin-bottom: 5px !important; */
-  }
+ 
 
   .banner-content {
     padding: 0 0px 20px 20px;
@@ -1772,9 +1762,7 @@ margin-top: -15px;
 
   }
 
-  .banner-content {
-    /* padding: 0 0 0 20px; */
-  }
+
 
   .landing-text h1 {
     font-size: 22px;
@@ -1798,9 +1786,7 @@ margin-top: -15px;
 
   }
 
-  .banner-content {
-    /* padding: 0 25px 0 0px; */
-  }
+  
 
   .landing-text h1 {
     font-size: 20px;
