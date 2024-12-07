@@ -1,0 +1,131 @@
+.table-add {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.table-add button {
+  background-color: #005395;
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.edit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 10px;
+}
+
+.update,
+.delete {
+  background-color: #005395;
+  color: white;
+}
+
+.car-details {
+  display: flex;
+  justify-content: flex-start;
+  row-gap: 10px;
+  /* border: 3px solid red; */
+}
+
+.car-detail {
+  /* border: 2px solid blue; */
+  padding: 20px;
+  background-color: #005395;
+  color: white;
+}
+
+
+
+
+.tour-package {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  justify-content: center;
+  gap: 20px;
+  padding: 40px 20px;
+  background-color: #F8F9FC; /* Soft white background */
+  margin: 0 auto;
+  max-width: 1200px; /* Restrict width for proper centering */
+}
+
+/* Individual tour package card styling */
+.tour-package-card {
+  width: 30%; /* Three columns layout */
+  background-color: #005395; /* Card background */
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  justify-content: center;
+}
+
+/* Card hover effect */
+.tour-package-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);
+}
+
+.tour-category li{
+  list-style-type: none;
+}
+
+/* Image styling */
+.tour-package-card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+/* Content area within the card */
+.tour-package-content {
+  padding: 20px;
+}
+
+/* Heading styling */
+.tour-package-content h3 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: white;
+}
+
+/* Subheading (category, persons) */
+.tour-package-content h4 {
+  font-size: 16px;
+  font-weight: 400;
+  color: white;
+  margin-bottom: 10px;
+}
+
+/* Service included section */
+.tour-package-content p {
+  font-size: 14px;
+  color: white;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+/* Button container */
+.tour-package-btn {
+  display: flex;
+  justify-content: flex-start;
+}
+
+/* Button styling */
+.tour-package-btn button {
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.tour-package-btn button:hover {
+  background-color: #333;
+}
