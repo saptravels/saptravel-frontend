@@ -67,7 +67,7 @@ const PackageBooknow = () => {
         <div className="row">
           <div className="col-lg-6">
             <img
-              src={`${server}/${tour.imageUrl}`}
+              src={`${tour.imageUrl}`}
               alt={tour.name}
               className="img-fluid mb-4"
               style={{ borderRadius: "10px" }}

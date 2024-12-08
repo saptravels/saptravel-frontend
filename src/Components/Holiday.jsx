@@ -64,7 +64,7 @@ export default function Holiday() {
         Name: holiday.name,
         Image: (
             <img
-              src={`${server}/${holiday.imageUrl}`}
+              src={`${holiday.imageUrl}`}
               alt="Car"
               className="img-thumbnail"
               style={{ width: '50px', height: 'auto' }}
@@ -73,7 +73,7 @@ export default function Holiday() {
         Services: holiday.services.map((service) => service.name).join(", "),
         Category: holiday.category?.map((cat) => cat.name).join(", ") || "",
         PDF: holiday.pdf ? (
-            <a href={`${server}/${holiday.pdf}`} target="_blank" rel="noopener noreferrer">
+            <a href={`${holiday.pdf}`} target="_blank" rel="noopener noreferrer">
                 Download PDF
             </a>
         ) : (

@@ -49,7 +49,7 @@ function Table() {
     'S.No': index + 1,
     Image: (
       <img
-        src={`${server}/${car.imageUrl}`}
+        src={`${car.imageUrl}`}
         alt="Car"
         className="img-thumbnail"
         style={{ width: '50px', height: 'auto' }}

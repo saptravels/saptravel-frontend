@@ -110,7 +110,7 @@ export default function TourPackages() {
                     </div>
                     {tours.map((tour) => (
                         <div className="tour-package-card col-lg-4 col-md-6 col-sm-12 mb-4" key={tour._id}>
-                            <img src={`http://localhost:8000/${tour.imageUrl}`} alt={tour.name} className="img-fluid tour-image" />
+                            <img src={`${tour.imageUrl}`} alt={tour.name} className="img-fluid tour-image" />
                             <div className="tour-package-content">
                                 <h3 className="tour-name">Package: {tour.name}</h3>
                                 {/* <h4 className="tour-category">
@@ -137,7 +137,7 @@ export default function TourPackages() {
                                     {
                                         tour.pdf && (<h6>For More Details about the package
                                             <a
-                                                href={`http://localhost:8000/${tour.pdf}`}
+                                                href={`${tour.pdf}`}
                                                 target="_blank"
                                                 rel="noopener noreferrer"
                                             >

@@ -1,1 +1,1 @@
-export const server= "https://saptravels-backend.vercel.app"
+export const server= "https://saptravels-backend.vercel.app/?vercelToolbarCode=cQ5Usjv6SSpTuu7"

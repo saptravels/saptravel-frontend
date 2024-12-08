@@ -61,7 +61,7 @@ export default function Tour() {
         Name: tour.name,
         Image: (
             <img
-              src={`${server}/${tour.imageUrl}`}
+              src={`${tour.imageUrl}`}
               alt="Car"
               className="img-thumbnail"
               style={{ width: '50px', height: 'auto' }}
@@ -71,7 +71,7 @@ export default function Tour() {
         Category: tour.category.join(', '),
         NoOfPersons: tour.numberOfPersons,
         PDF: tour.pdf ? (
-            <a href={`${server}/${tour.pdf}`} target="_blank" rel="noopener noreferrer">Download PDF</a>
+            <a href={`${tour.pdf}`} target="_blank" rel="noopener noreferrer">Download PDF</a>
         ) : 'N/A',
         Actions: (
             <div className="d-flex justify-content-left gap-2">

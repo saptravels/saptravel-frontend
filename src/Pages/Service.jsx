@@ -56,7 +56,7 @@ const Service = () => {
           {holidays.map((tour) => (
             <div className="tour-package-card" key={tour._id}>
               <img
-                src={`${server}/${tour.imageUrl}`}
+                src={`${tour.imageUrl}`}
                 alt={tour.name}
                 className="tour-image img-fluid"
               />

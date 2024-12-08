@@ -70,7 +70,7 @@ export default function Home() {
                 <div className="row mt-2">
                   <div className="col-lg-6">
                     <h2 className='home-banner-text'>25 + </h2>
-                    <h5>Cab Ready</h5>
+                    <h5>Cabs Ready</h5>
                     <p>cabs ready to provide you with affordable and comfortable travel!</p>
                   </div>
                   <div className="col-lg-6">
