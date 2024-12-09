@@ -81,10 +81,12 @@ const BookingForm = () => {
                 return { ...state, LocalTripType: capitalizeFirstLetter(action.payload) };
             case "DISTANCE":
                 return { ...state, distance: action.payload };
-            case "FARE":
-                return { ...state, fare: action.payload };
-            case "SELECTED-CAB":
-                return { ...state, selectedCab: action.payload }
+                case "SELECTED-CAB":
+                    return { ...state, selectedCab: action.payload };
+                case "FARE":
+                    return { ...state, fare: action.payload };
+
+
             default:
                 return state;
         }
@@ -104,10 +106,21 @@ const BookingForm = () => {
         setError("")
 
 
-        navigate("/confirmbooking", { state: { ...state, PickUpdate: state.PickUpdate.toLocaleDateString(), returndate: state.returndate.toLocaleDateString() } })
+        navigate("/confirmbooking", {
+            state: {
+                ...state,
+                PickUpdate: state.PickUpdate.toLocaleDateString(),
+                returndate: state.returndate.toLocaleDateString(),
+               
+            }
+        })
+
+
 
 
     };
+
+
 
 
 
@@ -390,15 +403,7 @@ const BookingForm = () => {
                                         </select>
 
                                     </div> */}
-                            {/* <div className='col-6'>
-                                        <label htmlFor="Fare">Fare (Rs)</label>
-                                        <input type="text" className='input-field'
-                                            id='Fare'
-                                            value={state.fare}
-                                            readOnly
-                                        />
-                                        <p style={{color:"black"}}>{state.fare}</p>
-                                    </div> */}
+
 
                         </div>
 
@@ -416,17 +421,18 @@ const BookingForm = () => {
                             <div className="col-12 search-cab">
                                 <button type='submit'>Book Now</button>
                             </div>
-                         
+
+
                         </div>
-                     
+
                     </form>
                     <Link to="/terms&conditions">
-                                <p className='fare-explanation' style={{ color: "black", marginTop: "-20px", fontSize: "10px", textAlign: "right" }}>
-                                    Terms & conditions Applicable
-                                </p>
-                            </Link>
+                        <p className='fare-explanation' style={{ color: "black", marginTop: "-20px", fontSize: "10px", textAlign: "right" }}>
+                            Terms & conditions Applicable
+                        </p>
+                    </Link>
                 </div>
-              
+
             </div>
         </div>
     )

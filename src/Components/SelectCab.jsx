@@ -255,17 +255,25 @@
 
 
 
+
+
+
+
+
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useDispatch, useSelector } from 'react-redux';
 import { getAllCar } from '../Slice/carsSlice';
 import { server } from "../config";
 
-const SelectCab = ({ state }) => {
-    const dispatch = useDispatch();
+const SelectCab = ({ state, dispatch }) => {
+    const dispatchRedux = useDispatch();
     const cabs = useSelector((state) => state.Cabs.Cabs || []);
     const [selectedCarModel, setSelectedCarModel] = useState("");
     const [selectedDescription, setSelectedDescription] = useState("");
+    const [selectedFare, setSelectedFare] = useState("");
+
+
 
     useEffect(() => {
         fetchData();
@@ -274,7 +282,7 @@ const SelectCab = ({ state }) => {
     const fetchData = async () => {
         try {
             const response = await axios.get(`${server}/api/v1/allCars`);
-            dispatch(getAllCar(response.data));
+            dispatchRedux(getAllCar(response.data));
         } catch (error) {
             console.error('Error fetching cars:', error.message);
         }
@@ -283,17 +291,19 @@ const SelectCab = ({ state }) => {
     const handleCarModelChange = (e) => {
         const carModel = e.target.value;
         setSelectedCarModel(carModel);
-
-        // Find the selected cab's description
         const selectedCab = cabs.find((cab) => cab.carModel === carModel);
-        console.log("cab" ,selectedCab)
+        setSelectedFare(selectedCab ? selectedCab.price : "Price not available");
+
         setSelectedDescription(selectedCab ? selectedCab.description : "No description available");
-        console.log("selectedDescription" ,selectedDescription)
+
+        dispatch({ type: "SELECTED-CAB", payload: selectedCab });
+        dispatch({ type: "FARE", payload: selectedCab?.price || 0 });
     };
 
     return (
-        <>
-            <div className="col-6">
+        <div>
+            <div className='row mb-3'>
+             <div className="col-6">
                 <label htmlFor="SelectCab">Select Cab</label> <br />
                 <select
                     id="carModelDropdown"
@@ -309,12 +319,25 @@ const SelectCab = ({ state }) => {
                     ))}
                 </select>
             </div>
+            <div className='col-6'>
+                <label htmlFor="Fare">Fare (Rs)</label>
+                <input type="text" className='input-field'
+                    id='Fare'
+                    value={selectedFare}
+                    readOnly
+                />
+            </div>
+            </div>
 
+          
+            
+            <div className='row mb-3'>
             <div className="col-6">
                 <label htmlFor="returnLocation">Description</label>
                 <p className='fare-explanation' style={{color:"black"}}>{selectedDescription}</p>
             </div>
-        </>
+            </div>
+        </div>
     );
 };
 
